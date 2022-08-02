@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.recyclerview2.databinding.ActivityMainBinding
+import com.example.recyclerview2.four.FourActivity
 import com.example.recyclerview2.thirdRV.ThirdActivity
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnThird.setOnClickListener{
             startActivity(Intent(this, ThirdActivity::class.java))
+        }
+
+        binding.btnHeroesGirls.setOnClickListener {
+            startActivity(Intent(this, FourActivity::class.java))
         }
 
     }
