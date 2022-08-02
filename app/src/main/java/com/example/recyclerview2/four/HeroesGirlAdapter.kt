@@ -7,7 +7,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.example.recyclerview2.data.HeroesGirlsResponse
-import com.example.recyclerview2.databinding.ActivityMainBinding
 import com.example.recyclerview2.databinding.ItemPahlawanWanitaBinding
 
 class HeroesGirlAdapter : RecyclerView.Adapter<HeroesGirlAdapter.MyViewHolder>() {

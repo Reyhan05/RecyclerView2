@@ -47,9 +47,7 @@ class FourActivity: AppCompatActivity() {
                 ) {
                     if (response.isSuccessful) heroesGirls.value = response.body()
                 }
-
                 override fun onFailure(call: Call<List<HeroesGirlsResponse>>, t: Throwable) {
-
                 }
         })
     }

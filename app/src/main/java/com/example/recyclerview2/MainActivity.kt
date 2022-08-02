@@ -24,6 +24,5 @@ class MainActivity : AppCompatActivity() {
         binding.btnHeroesGirls.setOnClickListener {
             startActivity(Intent(this, FourActivity::class.java))
         }
-
     }
 }
