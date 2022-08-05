@@ -3,6 +3,7 @@ package com.example.recyclerview2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.recyclerview2.cake.CakeActivity
 import com.example.recyclerview2.databinding.ActivityMainBinding
 import com.example.recyclerview2.four.FourActivity
 import com.example.recyclerview2.thirdRV.ThirdActivity
@@ -24,5 +25,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnHeroesGirls.setOnClickListener {
             startActivity(Intent(this, FourActivity::class.java))
         }
+
+        binding.btnCake.setOnClickListener {
+            startActivity(Intent(this, CakeActivity::class.java))
+        }
+
     }
 }

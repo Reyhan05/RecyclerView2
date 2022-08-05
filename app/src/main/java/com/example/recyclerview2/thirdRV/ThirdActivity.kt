@@ -22,13 +22,18 @@ class ThirdActivity : AppCompatActivity() {
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        getListPahlawan()
+
+        pahlawanAdapters = PahlawanAdapters(modelPahlawan)
+        // setUp Recycler View
+        binding.rvListPahlawan.adapter = pahlawanAdapters
+
         binding.rvListPahlawan.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this@ThirdActivity)
         }
 
-        getListPahlawan()
-        // setUpRecycler()
+
     }
 
    /* fun setUpRecycler() {
@@ -58,9 +63,6 @@ class ThirdActivity : AppCompatActivity() {
                     dataApi.image = jsonObjectData.getString("img")
                     modelPahlawan.add(dataApi)
                 }
-                pahlawanAdapters = PahlawanAdapters(modelPahlawan)
-                // setUp Recycler View
-                binding.rvListPahlawan.adapter = pahlawanAdapters
             }catch (e : JSONException){
                 e.printStackTrace()
             }
