@@ -40,14 +40,13 @@ class ThirdActivity : AppCompatActivity() {
     }*/
 
     fun getListPahlawan() {
-        try {
           // Membuka asset json
-            val stream = assets.open("pahlawan_nasional.json")
+            /*val stream = assets.open("pahlawan_nasional.json")
             val size = stream.available()
             val buffer = ByteArray(size)
             stream.read(buffer)
-            stream.close()
-            val strContent = String(buffer, StandardCharsets.UTF_8)
+            stream.close()*/
+        val strContent = getJSONObject()
             try {
                 val jsonObject = JSONObject(strContent)
                 val jsonArray = jsonObject.getJSONArray("daftar_pahlawan")
@@ -65,9 +64,22 @@ class ThirdActivity : AppCompatActivity() {
             }catch (e : JSONException){
                 e.printStackTrace()
             }
+    }
 
-        }catch(e : IOException){
+    fun getJSONObject(): String?{
+        val str: String
+        try {
+            str = assets.open("pahlawan_nasional.json").bufferedReader().use { it.readText() }
+            /*val stream = assets.open("pahlawan_nasional.json")
+            val size = stream.available()
+            val buffer = ByteArray(size)
+            stream.read(buffer)
+            stream.close()
+            str = String(buffer, StandardCharsets.UTF_8)*/
+        }catch (e : IOException){
             Toast.makeText(this, "Oppsss, Coba lagi", Toast.LENGTH_SHORT).show()
+            return null
         }
+        return str
     }
 }
